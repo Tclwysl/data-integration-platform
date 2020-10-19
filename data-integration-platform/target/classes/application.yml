@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/dip?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+    hibernate:
+      ddl-auto: update
+
+socket:
+  # 监听端口
+  port: 2222
+  # Socket超时(ms)
+  timeout: 0
+  # 线程池 - 保持线程数20
+  pool-keep: 20
+  # 线程池 - 核心线程数10
+  pool-core: 10
+  # 线程池 - 最大线程数30
+  pool-max: 30
+  # 线程队列容量
+  pool-queue-init: 10
+

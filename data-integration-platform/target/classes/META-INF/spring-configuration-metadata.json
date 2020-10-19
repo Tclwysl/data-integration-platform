@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "socket",
+      "type": "com.dajiang.platform.config.SocketProperties",
+      "sourceType": "com.dajiang.platform.config.SocketProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "socket.pool-core",
+      "type": "java.lang.Integer",
+      "sourceType": "com.dajiang.platform.config.SocketProperties"
+    },
+    {
+      "name": "socket.pool-keep",
+      "type": "java.lang.Integer",
+      "sourceType": "com.dajiang.platform.config.SocketProperties"
+    },
+    {
+      "name": "socket.pool-max",
+      "type": "java.lang.Integer",
+      "sourceType": "com.dajiang.platform.config.SocketProperties"
+    },
+    {
+      "name": "socket.pool-queue-init",
+      "type": "java.lang.Integer",
+      "sourceType": "com.dajiang.platform.config.SocketProperties"
+    },
+    {
+      "name": "socket.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.dajiang.platform.config.SocketProperties"
+    },
+    {
+      "name": "socket.timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.dajiang.platform.config.SocketProperties"
+    }
+  ],
+  "hints": []
+}
