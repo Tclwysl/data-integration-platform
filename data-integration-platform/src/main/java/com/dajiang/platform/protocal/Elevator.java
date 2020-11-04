@@ -839,7 +839,7 @@ public class Elevator {
 
     /**
      * 解析人员身份认证信息0x12
-     * 测试数据:A55A121100000101e4b880e4ba8ce4b889e59b9be4ba94e585ade4b883e585abe4b99de58d81e4e461626364656667689933373038323931393939303833363032334742CC33C33C
+     * 测试数据:A55A121100000101e4b880e4ba8ce4b889e59b9be4ba94e585ade4b883e585abe4b99de58d81616263646566676899333730383239313939393038333630323334B341CC33C33C
      * @param hexString
      */
     public void parseAuthenticateData(String hexString) {
@@ -866,22 +866,22 @@ public class Elevator {
             log.info("distStatus: " + distStatus);
 
             //用户名
-            byte[] copyBytes2 = Arrays.copyOfRange(dataBytes, 5, 37);
+            byte[] copyBytes2 = Arrays.copyOfRange(dataBytes, 5, 35);
             String driverName = DataTranslate.getASCII(copyBytes2);
             log.info("driverName: " + driverName);
 
             //用户ID
-            byte[] copyBytes3 = Arrays.copyOfRange(dataBytes, 37, 45);
+            byte[] copyBytes3 = Arrays.copyOfRange(dataBytes, 35, 43);
             String userId = DataTranslate.getASCII(copyBytes3);
             log.info("userId: " + userId);
 
             //识别分数
-            byte[] copyBytes4 = Arrays.copyOfRange(dataBytes, 45, 46);
+            byte[] copyBytes4 = Arrays.copyOfRange(dataBytes, 43, 44);
             Integer distNum = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes4),16);
             log.info("distNum: " + distNum);
 
             //身份证号码
-            byte[] copyBytes5 = Arrays.copyOfRange(dataBytes, 46, 64);
+            byte[] copyBytes5 = Arrays.copyOfRange(dataBytes, 44, 62);
             String driverId = DataTranslate.getASCII(copyBytes5);
             log.info("driverId: " + driverId);
 
