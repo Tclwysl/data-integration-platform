@@ -718,27 +718,27 @@ public class TowerCrane {
             //当前允许载重
             byte[] copyBytes13 = Arrays.copyOfRange(dataBytes,20,22);
             Float loadJudge = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes13));
-            log.info("loadJudge" + loadJudge);
+            log.info("loadJudge：" + loadJudge);
 
             //载重百分比
             byte[] copyBytes14 = Arrays.copyOfRange(dataBytes,22,23);
             Float loadPer = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes14));
-            log.info("loadPer" + loadPer);
+            log.info("loadPer：" + loadPer);
 
             //风速
             byte[] copyBytes15 = Arrays.copyOfRange(dataBytes,23,25);
             Float Wind = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes15));
-            log.info("Wind" + Wind);
+            log.info("Wind：" + Wind);
 
             //倾斜
             byte[] copyBytes16 = Arrays.copyOfRange(dataBytes,25,27);
             Float Tilt = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes16));
-            log.info("Tilt" + Tilt);
+            log.info("Tilt：" + Tilt);
 
             //高度限位值
             Integer heightSpa16 = (dataBytes[27] & 0x0F);
             Integer heightSpa = Integer.parseInt(heightSpa16.toString(),16);
-            log.info("heightSpa" + heightSpa);
+            log.info("heightSpa：" + heightSpa);
 
             //幅度回转限位
             //远近
@@ -747,7 +747,7 @@ public class TowerCrane {
             //左右
             Integer rangeSpazy16 = (dataBytes[28] & 0xF0);
             Integer rangeSpazy = Integer.parseInt(rangeSpazy16.toString(),16);
-            log.info(" rangeSpayj:" +  rangeSpayj + " ; rangeSpazy" + rangeSpazy);
+            log.info(" rangeSpayj:" +  rangeSpayj + " ; rangeSpazy：" + rangeSpazy);
 
             //载重限制值
             byte[] copyBytes18 = Arrays.copyOfRange(dataBytes,29,30);
