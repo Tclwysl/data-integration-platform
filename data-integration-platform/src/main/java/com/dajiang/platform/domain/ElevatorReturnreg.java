@@ -32,6 +32,6 @@ public class ElevatorReturnreg {
     @Column(name = "status", nullable = false, columnDefinition = "int(32) COMMENT '注册结果 非零即为许可'")
     private Integer staTus;
 
-    @Column(name = "timeinterval", nullable = false, columnDefinition = "float(32) COMMENT '上传时间间隔'")
-    private Float timeInterval;
+    @Column(name = "timeinterval", nullable = false, columnDefinition = "float(32,1) COMMENT '上传时间间隔'")
+    private Double  timeInterval;
 }

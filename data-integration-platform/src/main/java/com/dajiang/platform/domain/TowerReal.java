@@ -28,29 +28,29 @@ public class TowerReal {
     @Column(name = "ti_me", nullable = false, columnDefinition = "timestamp COMMENT '上传时间'")
     private Timestamp time;
 
-    @Column(name = "hei_ght", nullable = false, columnDefinition = "float(32) COMMENT '高度'")
-    private Float Height;
+    @Column(name = "hei_ght", nullable = false, columnDefinition = "float(32,1) COMMENT '高度'")
+    private Double Height;
 
-    @Column(name = "ran_ge", nullable = false, columnDefinition = "float(32) COMMENT '幅度'")
-    private Float Range;
+    @Column(name = "ran_ge", nullable = false, columnDefinition = "float(32,1) COMMENT '幅度'")
+    private Double Range;
 
-    @Column(name = "tu_rn", nullable = false, columnDefinition = "float(32) COMMENT '回转'")
-    private Float Turn;
+    @Column(name = "tu_rn", nullable = false, columnDefinition = "float(32,1) COMMENT '回转'")
+    private Double Turn;
 
-    @Column(name = "lo_ad", nullable = false, columnDefinition = "float(32) COMMENT '载重'")
-    private Float Load;
+    @Column(name = "lo_ad", nullable = false, columnDefinition = "float(32,1) COMMENT '载重'")
+    private Double Load;
 
-    @Column(name = "load_judge", nullable = false, columnDefinition = "float(32) COMMENT '当前允许载重'")
-    private Float loadJudge;
+    @Column(name = "load_judge", nullable = false, columnDefinition = "float(32,1) COMMENT '当前允许载重'")
+    private Double loadJudge;
 
-    @Column(name = "load_per", nullable = false, columnDefinition = "float(32) COMMENT '载重百分比'")
-    private Float loadPer;
+    @Column(name = "load_per", nullable = false, columnDefinition = "float(32,1) COMMENT '载重百分比'")
+    private Double loadPer;
 
-    @Column(name = "wi_nd", nullable = false, columnDefinition = "float(32) COMMENT '风速'")
-    private Float Wind;
+    @Column(name = "wi_nd", nullable = false, columnDefinition = "float(32,1) COMMENT '风速'")
+    private Double Wind;
 
-    @Column(name = "ti_lt", nullable = false, columnDefinition = "float(32) COMMENT '倾斜'")
-    private Float Tilt;
+    @Column(name = "ti_lt", nullable = false, columnDefinition = "float(32,1) COMMENT '倾斜'")
+    private Double Tilt;
 
     @Column(name = "height_spa", nullable = false, columnDefinition = "int(32) COMMENT '高度限位值'")
     private Integer heightSpa;

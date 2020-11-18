@@ -14,6 +14,9 @@ import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+
+import java.text.DecimalFormat;
 /**
  * 塔机黑匣子协议解析
  */
@@ -309,32 +312,43 @@ public class TowerCrane {
 
             //坐标X
             byte[] copyBytes5 = Arrays.copyOfRange(dataBytes, 8, 10);
-            Float towerX = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes5));
+            Integer towerX1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes5),16);
+            Double towerX = towerX1 * 0.1;
             log.info("towerX:" + towerX.toString());
 
             //坐标Y
+
+            DecimalFormat df = new DecimalFormat("#0.00");
+
+
             byte[] copyBytes6 = Arrays.copyOfRange(dataBytes, 10, 12);
-            Float towerY = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes6));
+            Integer towerY1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes6),16);
+            Double towerY = towerY1 * 0.1;
+            df.format(towerY);
             log.info("towerY:" + towerY.toString());
 
             //起重臂长
             byte[] copyBytes7 = Arrays.copyOfRange(dataBytes, 12, 14);
-            Float towerBoomlen = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes7));
+            Integer towerBoomlen1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes7),16);
+            Double towerBoomlen = towerBoomlen1 * 0.1;
             log.info("towerBoomlen:" + towerBoomlen.toString());
 
             //平衡臂长
             byte[] copyBytes8 = Arrays.copyOfRange(dataBytes, 14, 16);
-            Float towerBalancelen = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes8));
+            Integer towerBalancelen1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes8),16);
+            Double towerBalancelen = towerBalancelen1 * 0.1;
             log.info("towerBalancelen:" + towerBalancelen.toString());
 
             //塔帽高
             byte[] copyBytes9 = Arrays.copyOfRange(dataBytes, 16, 18);
-            Float towerCaphei = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes9));
+            Integer towerCaphei1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes9),16);
+            Double towerCaphei = towerCaphei1 * 0.1;
             log.info("towerCaphei:" + towerCaphei.toString());
 
             //起重臂高
             byte[] copyBytes10 = Arrays.copyOfRange(dataBytes, 18, 20);
-            Float towerBoomhei = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes10));
+            Integer towerBoomhei1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes10),16);
+            Double towerBoomhei = towerBoomhei1 * 0.1;
             log.info("towerBoomhei:" + towerBoomhei.toString());
 
             //绳索倍率
@@ -349,7 +363,8 @@ public class TowerCrane {
 
             //高度标定X1
             byte[] copyBytes13 = Arrays.copyOfRange(dataBytes, 23, 25);
-            Float towerHeix1 = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes13));
+            Integer towerHeix11 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes13),16);
+            Double towerHeix1 = towerHeix11 * 0.1;
             log.info("towerHeix1:" + towerHeix1.toString());
 
             //高度标定AD2
@@ -359,7 +374,8 @@ public class TowerCrane {
 
             //高度标定 X2
             byte[] copyBytes15 = Arrays.copyOfRange(dataBytes, 27, 29);
-            Float towerHeix2 = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes15));
+            Integer towerHeix21 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes15),16);
+            Double towerHeix2 = towerHeix21 * 0.1;
             log.info("towerHeix2:" + towerHeix2.toString());
 
             //幅度标定AD1
@@ -369,7 +385,8 @@ public class TowerCrane {
 
             //幅度标定X1
             byte[] copyBytes17 = Arrays.copyOfRange(dataBytes, 31, 33);
-            Float towerRangex1 = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes17));
+            Integer towerRangex11 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes17),16);
+            Double towerRangex1 = towerRangex11 * 0.1;
             log.info("towerRangex1:" + towerRangex1.toString());
 
             //幅度标定AD2
@@ -379,7 +396,8 @@ public class TowerCrane {
 
             //幅度标定X2
             byte[] copyBytes19 = Arrays.copyOfRange(dataBytes, 35, 37);
-            Float towerRangex2 = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes19));
+            Integer towerRangex21 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes19),16);
+            Double towerRangex2 = towerRangex21 * 0.1;
             log.info("towerRangex2:" + towerRangex2.toString());
 
             //回转标定AD1
@@ -389,7 +407,8 @@ public class TowerCrane {
 
             //回转标定X1
             byte[] copyBytes21 = Arrays.copyOfRange(dataBytes, 39, 41);
-            Float towerTurnx1 = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes21));
+            Integer towerTurnx11 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes21),16);
+            Double towerTurnx1 = towerTurnx11 * 0.1;
             log.info("towerRangex2:" + towerTurnx1.toString());
 
             //回转标定AD2
@@ -399,7 +418,8 @@ public class TowerCrane {
 
             //回转标定X2
             byte[] copyBytes23 = Arrays.copyOfRange(dataBytes, 43, 45);
-            Float towerTurnx2 = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes23));
+            Integer towerTurnx21 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes23),16);
+            Double towerTurnx2 = towerTurnx21 * 0.1;
             log.info("towerTurnx2:" + towerTurnx2.toString());
 
             //重量标定AD1  2byte    towerWeid1
@@ -409,7 +429,8 @@ public class TowerCrane {
 
             //重量标定X1
             byte[] copyBytes25 = Arrays.copyOfRange(dataBytes, 47, 49);
-            Float towerWeix1 = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes25));
+            Integer towerWeix11 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes25),16);
+            Double towerWeix1 = towerWeix11 * 0.1;
             log.info("towerWeix1:" + towerWeix1.toString());
 
             //重量标定AD2
@@ -419,7 +440,8 @@ public class TowerCrane {
 
             //重量标定X2
             byte[] copyBytes27 = Arrays.copyOfRange(dataBytes, 51, 53);
-            Float towerWeix2 = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes27));
+            Integer towerWeix21 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes27),16);
+            Double towerWeix2 = towerWeix21 * 0.1;
             log.info("towerWeix2:" + towerWeix2.toString());
 
             //风速标定校准值
@@ -434,82 +456,98 @@ public class TowerCrane {
 
             //高度起点限位
             byte[] copyBytes30 = Arrays.copyOfRange(dataBytes, 57, 59);
-            Float heightStart = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes30));
+            Integer heightStart1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes30),16);
+            Double heightStart = heightStart1 * 0.1;
             log.info("heightStart:" + heightStart.toString());
 
             //高度终点限位
             byte[] copyBytes31 = Arrays.copyOfRange(dataBytes, 59, 61);
-            Float heightEnd = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes31));
+            Integer heightEnd1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes31),16);
+            Double heightEnd = heightEnd1 * 0.1;
             log.info("heightEnd:" + heightEnd.toString());
 
             //幅度起点限位
             byte[] copyBytes32 = Arrays.copyOfRange(dataBytes, 61, 63);
-            Float rangeStart = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes32));
+            Integer rangeStart1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes32),16);
+            Double rangeStart = rangeStart1 * 0.1;
             log.info("rangeStart:" + rangeStart.toString());
 
             //幅度终点限位
             byte[] copyBytes33 = Arrays.copyOfRange(dataBytes, 63, 65);
-            Float rangeEnd = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes33));
+            Integer rangeEnd1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes33),16);
+            Double rangeEnd = rangeEnd1 * 0.1;
             log.info("rangeEnd:" + rangeEnd.toString());
 
             //回转左限位
             byte[] copyBytes34 = Arrays.copyOfRange(dataBytes, 65, 67);
-            Float trunLf = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes34));
+            Integer trunLf1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes34),16);
+            Double trunLf = trunLf1 * 0.1;
             log.info("trunLf:" + trunLf.toString());
 
             //回转右限位
             byte[] copyBytes35 = Arrays.copyOfRange(dataBytes, 67, 69);
-            Float trunRi = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes35));
+            Integer trunRi1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes35),16);
+            Double trunRi = trunRi1 * 0.1;
             log.info("trunRi:" + trunRi.toString());
 
             //水平报警距离
             byte[] copyBytes36 = Arrays.copyOfRange(dataBytes, 69, 71);
-            Float warningHor = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes36));
+            Integer warningHor1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes36),16);
+            Double warningHor = warningHor1 * 0.1;
             log.info("warningHor:" + warningHor.toString());
 
             //垂直报警距离
             byte[] copyBytes37 = Arrays.copyOfRange(dataBytes, 71, 73);
-            Float warningVer = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes37));
+            Integer warningVer1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes37),16);
+            Double warningVer = warningVer1 * 0.1;
             log.info("warningVer:" + warningVer.toString());
 
             //重量报警百分比
             byte[] copyBytes38 = Arrays.copyOfRange(dataBytes, 73, 75);
-            Float warningHei = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes38));
+            Integer warningHei1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes38),16);
+            Double warningHei = warningHei1 * 0.1;
             log.info("warningHei:" + warningHei.toString());
 
             //风速报警值
             byte[] copyBytes39 = Arrays.copyOfRange(dataBytes, 75, 77);
-            Float warningWin = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes39));
+            Integer warningWin1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes39),16);
+            Double warningWin = warningWin1 * 0.1;
             log.info("warningWin:" + warningWin.toString());
 
             //倾斜报警值
             byte[] copyBytes40 = Arrays.copyOfRange(dataBytes, 77, 79);
-            Float warningTil = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes40));
+            Integer warningTil1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes40),16);
+            Double warningTil = warningTil1 * 0.1;
             log.info("warningTil:" + warningTil.toString());
 
             //水平预警距离
             byte[] copyBytes41 = Arrays.copyOfRange(dataBytes, 79, 81);
-            Float earlywarningHor = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes41));
+            Integer earlywarningHor1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes41),16);
+            Double earlywarningHor = earlywarningHor1 * 0.1;
             log.info("earlywarningHor:" + earlywarningHor.toString());
 
             //垂直预警距离
             byte[] copyBytes42 = Arrays.copyOfRange(dataBytes, 81, 83);
-            Float earlywarningVer = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes42));
+            Integer earlywarningVer1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes42),16);
+            Double earlywarningVer = earlywarningVer1 * 0.1;
             log.info("earlywarningVer:" + earlywarningVer.toString());
 
             //重量预警百分比
             byte[] copyBytes43 = Arrays.copyOfRange(dataBytes, 83, 85);
-            Float earlywarningHer = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes43));
+            Integer earlywarningHer1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes43),16);
+            Double earlywarningHer = earlywarningHer1 * 0.1;
             log.info("earlywarningHer:" + earlywarningHer.toString());
 
             //风速预警值
             byte[] copyBytes44 = Arrays.copyOfRange(dataBytes, 85, 87);
-            Float earlywarningWin = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes44));
+            Integer earlywarningWin1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes44),16);
+            Double earlywarningWin = earlywarningWin1 * 0.1;
             log.info("earlywarningWin:" + earlywarningWin.toString());
 
             //倾斜预警值
             byte[] copyBytes45 = Arrays.copyOfRange(dataBytes, 87, 89);
-            Float earlywarningTil = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes45));
+            Integer earlywarningTil1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes45),16);
+            Double earlywarningTil = earlywarningTil1 * 0.01;
             log.info("earlywarningTil:" + earlywarningTil.toString());
 
             //碰撞制动允许
@@ -697,42 +735,50 @@ public class TowerCrane {
 
             //高度
             byte[] copyBytes9 = Arrays.copyOfRange(dataBytes,12,14);
-            Float Height = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes9));
+            Integer Height1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes9),16);
+            Double Height = Height1 * 0.1;
             log.info("Height:" + Height);
 
             //幅度
             byte[] copyBytes10 = Arrays.copyOfRange(dataBytes,14,16);
-            Float Range = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes10));
+            Integer Range1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes10),16);
+            Double Range = Range1 * 0.1;
             log.info("Range:" + Range);
 
             //回转
             byte[] copyBytes11 = Arrays.copyOfRange(dataBytes,16,18);
-            Float Turn = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes11));
+            Integer Turn1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes11),16);
+            Double Turn = Turn1 * 0.1;
             log.info("Turn:" + Turn);
 
             //载重
             byte[] copyBytes12 = Arrays.copyOfRange(dataBytes,18,20);
-            Float Load = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes12));
+            Integer Load1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes12),16);
+            Double Load = Load1 * 0.1;
             log.info("Load:" + Load);
 
             //当前允许载重
             byte[] copyBytes13 = Arrays.copyOfRange(dataBytes,20,22);
-            Float loadJudge = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes13));
+            Integer loadJudge1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes13),16);
+            Double loadJudge = loadJudge1 * 0.1;
             log.info("loadJudge：" + loadJudge);
 
             //载重百分比
             byte[] copyBytes14 = Arrays.copyOfRange(dataBytes,22,23);
-            Float loadPer = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes14));
+            Integer loadPer1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes14),16);
+            Double loadPer = loadPer1 * 0.1;
             log.info("loadPer：" + loadPer);
 
             //风速
             byte[] copyBytes15 = Arrays.copyOfRange(dataBytes,23,25);
-            Float Wind = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes15));
+            Integer Wind1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes15),16);
+            Double Wind = Wind1 * 0.1;
             log.info("Wind：" + Wind);
 
             //倾斜
             byte[] copyBytes16 = Arrays.copyOfRange(dataBytes,25,27);
-            Float Tilt = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes16));
+            Integer Tilt1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes16),16);
+            Double Tilt = Tilt1 * 0.01;
             log.info("Tilt：" + Tilt);
 
             //高度限位值
@@ -1049,17 +1095,20 @@ public class TowerCrane {
 
             //起吊点高度
             byte[] copyBytes15 = Arrays.copyOfRange(dataBytes,18,20);
-            Float liftingHei = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes15));
+            Integer liftingHei1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes15),16);
+            Double liftingHei = liftingHei1 * 0.1;
             log.info("liftingHei:" + liftingHei);
 
             //起吊点幅度
             byte[] copyBytes16 = Arrays.copyOfRange(dataBytes,20,22);
-            Float liftingRange = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes16));
+            Integer liftingRange1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes16),16);
+            Double liftingRange = liftingRange1 * 0.1;
             log.info("liftingRange:" + liftingRange);
 
             //起吊点回转
             byte[] copyBytes17 = Arrays.copyOfRange(dataBytes,22,24);
-            Float liftingTurn = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes17));
+            Integer liftingTurn1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes17),16);
+            Double liftingTurn = liftingTurn1 * 0.1;
             log.info("liftingTurn:" + liftingTurn);
 
             //起吊时间2
@@ -1110,27 +1159,32 @@ public class TowerCrane {
 
             //起吊点高度2
             byte[] copyBytes24 = Arrays.copyOfRange(dataBytes,30,32);
-            Float liftingHei2 = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes24));
+            Integer liftingHei21 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes24),16);
+            Double liftingHei2 = liftingHei21 * 0.1;
             log.info("liftingHei2:" + liftingHei2);
 
             //起吊点幅度2
             byte[] copyBytes25 = Arrays.copyOfRange(dataBytes,32,34);
-            Float liftingRange2 = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes25));
+            Integer liftingRange21 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes25),16);
+            Double liftingRange2 = liftingRange21 * 0.1;
             log.info("liftingRange2:" + liftingRange2);
 
             //起吊点回转 2
             byte[] copyBytes26 = Arrays.copyOfRange(dataBytes,34,36);
-            Float liftingTurn2 = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes26));
+            Integer liftingTurn21 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes26),16);
+            Double liftingTurn2 = liftingTurn21 * 0.1;
             log.info("liftingTurn2:" + liftingTurn2);
 
             //最大吊重
             byte[] copyBytes27 = Arrays.copyOfRange(dataBytes,36,38);
-            Float liftingWei = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes27));
+            Integer liftingWei1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes27),16);
+            Double liftingWei = liftingWei1 * 0.1;
             log.info("liftingWei:" + liftingWei);
 
             //最大负荷
             byte[] copyBytes28 = Arrays.copyOfRange(dataBytes,38,39);
-            Float liftingLoad = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes28));
+            Integer liftingLoad1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes28),16);
+            Double liftingLoad = liftingLoad1 * 0.1;
             log.info("liftingLoad:" + liftingLoad);
 
             //是否违章

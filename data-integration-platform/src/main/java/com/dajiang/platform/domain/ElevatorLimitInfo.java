@@ -30,27 +30,27 @@ public class ElevatorLimitInfo {
     @Column(name = "recordTime", nullable = false, columnDefinition = "timestamp COMMENT '数据采集时间'")
     private Timestamp recordTIME;
 
-    @Column(name = "maxlifting_warning", nullable = false, columnDefinition = "int(32) COMMENT '最大起重预警'")
-    private Integer maxliftingWarning;
+    @Column(name = "maxlifting_warning", nullable = false, columnDefinition = "float(32,1) COMMENT '最大起重预警'")
+    private Double maxliftingWarning;
 
-    @Column(name = "maxlifting_ctp", nullable = false, columnDefinition = "int(32) COMMENT '最大起重量报警'")
-    private Integer maxliftingCtp;
+    @Column(name = "maxlifting_ctp", nullable = false, columnDefinition = "float(32,1) COMMENT '最大起重量报警'")
+    private Double maxliftingCtp;
 
-    @Column(name = "maxlifting_hei", nullable = false, columnDefinition = "int(32) COMMENT '最大起升高度'")
-    private Integer maxliftingHei;
+    @Column(name = "maxlifting_hei", nullable = false, columnDefinition = "float(32,1) COMMENT '最大起升高度'")
+    private Double maxliftingHei;
 
-    @Column(name = "maxspeed_warning", nullable = false, columnDefinition = "int(32) COMMENT '最大速度预警'")
-    private Integer maxspeedWarning;
+    @Column(name = "maxspeed_warning", nullable = false, columnDefinition = "float(32,1) COMMENT '最大速度预警'")
+    private Double maxspeedWarning;
 
-    @Column(name = "maxspeed_ctp", nullable = false, columnDefinition = "int(32) COMMENT '最大速度报警'")
-    private Integer maxspeedCtp;
+    @Column(name = "maxspeed_ctp", nullable = false, columnDefinition = "float(32,1) COMMENT '最大速度报警'")
+    private Double maxspeedCtp;
 
     @Column(name = "maxload_peo", nullable = false, columnDefinition = "int(32) COMMENT '最大承载人数'")
     private Integer maxloadPeo;
 
-    @Column(name = "tilt_warning", nullable = false, columnDefinition = "int(32) COMMENT '倾斜预警值'")
-    private Integer tiltWarning;
+    @Column(name = "tilt_warning", nullable = false, columnDefinition = "float(32,1) COMMENT '倾斜预警值'")
+    private Double tiltWarning;
 
-    @Column(name = "tilt_ctp", nullable = false, columnDefinition = "int(32) COMMENT '倾斜报警值'")
-    private Integer tiltCtp;
+    @Column(name = "tilt_ctp", nullable = false, columnDefinition = "float(32,1) COMMENT '倾斜报警值'")
+    private Double tiltCtp;
 }

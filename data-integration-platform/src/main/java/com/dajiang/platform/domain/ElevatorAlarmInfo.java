@@ -29,20 +29,20 @@ public class ElevatorAlarmInfo {
     @Column(name = "recordTime", nullable = false, columnDefinition = "timestamp COMMENT '时间(此为信息体中时间，信息体中包含时间则不记录采集时间)'")
     private Timestamp recordTIME;
 
-    @Column(name = "real_lifting", nullable = false, columnDefinition = "int(32) COMMENT '实时起重量'")
-    private Integer realLifting;
+    @Column(name = "real_lifting", nullable = false, columnDefinition = "float(32,1) COMMENT '实时起重量'")
+    private Double realLifting;
 
-    @Column(name = "weight_per", nullable = false, columnDefinition = "int(32) COMMENT '重量百分比'")
-    private Integer weightPer;
+    @Column(name = "weight_per", nullable = false, columnDefinition = "float(32,1) COMMENT '重量百分比'")
+    private Double weightPer;
 
     @Column(name = "real_peoplenum", nullable = false, columnDefinition = "int(32) COMMENT '实时人数'")
     private Integer realPeoplenum;
 
-    @Column(name = "real_height", nullable = false, columnDefinition = "int(32) COMMENT '实时高度'")
-    private Integer realHeight;
+    @Column(name = "real_height", nullable = false, columnDefinition = "float(32,1) COMMENT '实时高度'")
+    private Double realHeight;
 
-    @Column(name = "real_height_per", nullable = false, columnDefinition = "int(32) COMMENT '高度百分比'")
-    private Integer realHeightper;
+    @Column(name = "real_height_per", nullable = false, columnDefinition = "float(32,1) COMMENT '高度百分比'")
+    private Double realHeightper;
 
     @Column(name = "real_speed", nullable = false, columnDefinition = "int(32) COMMENT '实时速度—速度'")
     private Integer realSpeed;
@@ -50,11 +50,11 @@ public class ElevatorAlarmInfo {
     @Column(name = "tilt_direction", nullable = false, columnDefinition = "int(32) COMMENT '实时速度—方向'")
     private Integer tiltDirection;
 
-    @Column(name = "real_tilt", nullable = false, columnDefinition = "int(32) COMMENT '实时倾斜度'")
-    private Integer realTilt;
+    @Column(name = "real_tilt", nullable = false, columnDefinition = "float(32,1) COMMENT '实时倾斜度'")
+    private Double realTilt;
 
-    @Column(name = "tilt_per", nullable = false, columnDefinition = "int(32) COMMENT '倾斜百分比'")
-    private Integer tiltPer;
+    @Column(name = "tilt_per", nullable = false, columnDefinition = "float(32,1) COMMENT '倾斜百分比'")
+    private Double tiltPer;
 
     @Column(name = "driverStatus", nullable = false, columnDefinition = "int(32) COMMENT '驾驶员身份认证结果'")
     private Integer driverStatus;

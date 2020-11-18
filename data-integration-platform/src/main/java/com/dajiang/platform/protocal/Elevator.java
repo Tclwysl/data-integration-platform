@@ -219,7 +219,8 @@ public class Elevator {
             log.info("staTus: " + staTus.toString());
             //上报数据间隔
             byte[] copyBytes2 = Arrays.copyOfRange(dataBytes, 5, 6);
-            Float timeInterval = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes2));
+            Integer timeInterval1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes2),16);
+            Double timeInterval = timeInterval1 * 0.1;
             log.info("timeInterval: " + timeInterval.toString());
             //时间
             byte[] copyBytes3 = Arrays.copyOfRange(dataBytes, 6, 7);//年
@@ -409,27 +410,32 @@ public class Elevator {
 
             //最大起重预警
             byte[] copyBytes1 = Arrays.copyOfRange(dataBytes, 4, 6);
-            Integer maxliftingWarning = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes1),16);
+            Integer maxliftingWarning1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes1),16);
+            Double maxliftingWarning = maxliftingWarning1 *0.1;
             log.info("maxliftingWarning: " + maxliftingWarning);
 
             //最大起重量报警
             byte[] copyBytes2 = Arrays.copyOfRange(dataBytes, 6, 8);
-            Integer maxliftingCtp = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes2),16);
+            Integer maxliftingCtp1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes2),16);
+            Double maxliftingCtp = maxliftingCtp1 * 0.1;
             log.info("maxliftingCtp: " + maxliftingCtp);
 
             //最大起升高度
             byte[] copyBytes3 = Arrays.copyOfRange(dataBytes, 8, 10);
-            Integer maxliftingHei = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes3),16);
+            Integer maxliftingHei1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes3),16);
+            Double maxliftingHei = maxliftingHei1 * 0.1;
             log.info("maxliftingHei: " + maxliftingHei);
 
             //最大速度预警
             byte[] copyBytes4 = Arrays.copyOfRange(dataBytes, 10, 12);
-            Integer maxspeedWarning = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes4),16);
+            Integer maxspeedWarning1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes4),16);
+            Double maxspeedWarning = maxliftingWarning1 * 0.1;
             log.info("maxspeedWarning: " + maxspeedWarning);
 
             //最大速度报警
             byte[] copyBytes5 = Arrays.copyOfRange(dataBytes, 12, 14);
-            Integer maxspeedCtp = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes5),16);
+            Integer maxspeedCtp1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes5),16);
+            Double maxspeedCtp = maxspeedCtp1 * 0.1;
             log.info("maxspeedCtp: " + maxspeedCtp);
 
             //最大承载人数
@@ -439,12 +445,14 @@ public class Elevator {
 
             //倾斜预警值
             byte[] copyBytes7 = Arrays.copyOfRange(dataBytes, 16, 18);
-            Integer tiltWarning = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes7),16);
+            Integer tiltWarning1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes7),16);
+            Double tiltWarning = tiltWarning1 * 0.01;
             log.info("tiltWarning: " + tiltWarning);
 
             //倾斜报警值
             byte[] copyBytes8 = Arrays.copyOfRange(dataBytes, 18, 20);
-            Integer tiltCtp = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes8),16);
+            Integer tiltCtp1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes8),16);
+            Double tiltCtp = tiltCtp1 * 0.01;
             log.info("tiltCtp: " + tiltCtp);
 
             //数据采集时间
@@ -542,12 +550,14 @@ public class Elevator {
 
             //本次运行载重
             byte[] copyBytes2 = Arrays.copyOfRange(dataBytes, 10, 12);
-            Float loAdd = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes2));
+            Integer loAdd1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes2),16);
+            Double loAdd = loAdd1 * 0.1;
             log.info("loAdd:" + loAdd.toString());
 
             //本次运行最大载重百分比
             byte[] copyBytes3 = Arrays.copyOfRange(dataBytes, 12, 13);
-            Float loadPErcent = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes3));
+            Integer loadPErcent1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes3),16);
+            Double loadPErcent = loadPErcent1 * 0.1;
             log.info("loadPErcent:" + loadPErcent.toString());
 
             //实时人数
@@ -557,12 +567,14 @@ public class Elevator {
 
             //实时高度
             byte[] copyBytes5 = Arrays.copyOfRange(dataBytes, 14, 16);
-            Float startHEight = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes5));
+            Integer startHEight1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes5),16);
+            Double startHEight = startHEight1 * 0.1;
             log.info("startHEight:" + startHEight.toString());
 
             //高度百分比
             byte[] copyBytes6 = Arrays.copyOfRange(dataBytes, 16, 17);
-            Float heightper = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes6));
+            Integer heightper1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes6),16);
+            Double heightper = heightper1 * 0.1;
             log.info("heightper:" + heightper.toString());
 
             //实时速度
@@ -576,12 +588,14 @@ public class Elevator {
 
             //实时倾斜度
             byte[] copyBytes8 = Arrays.copyOfRange(dataBytes, 18, 20);
-            Float tilt = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes8));
+            Integer tilt1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes8),16);
+            Double tilt = tilt1 * 0.01;
             log.info("tilt:" + tilt.toString());
 
             //倾斜百分比
             byte[] copyBytes9 = Arrays.copyOfRange(dataBytes, 20, 21);
-            Float tiltper = Float.parseFloat(DataTranslate.bytesToHexString(copyBytes9));
+            Integer tiltper1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes9),16);
+            Double tiltper = tiltper1 * 0.01;
             log.info("tiltper:" + tiltper.toString());
 
             //驾驶员认证结果
@@ -741,12 +755,14 @@ public class Elevator {
 
             //实时起重量
             byte[] copyBytes9 = Arrays.copyOfRange(dataBytes, 10, 12);
-            Integer realLifting = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes9),16);
+            Integer realLifting1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes9),16);
+            Double realLifting = realLifting1 * 0.1;
             log.info("realLifting: " + realLifting.toString());
 
             //重量百分比
             byte[] copyBytes10 = Arrays.copyOfRange(dataBytes, 12, 13);
-            Integer weightPer = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes10),16);
+            Integer weightPer1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes10),16);
+            Double weightPer = weightPer1 * 0.1;
             log.info("weightPer: " + weightPer.toString());
 
             //实时人数
@@ -756,12 +772,14 @@ public class Elevator {
 
             //实时高度
             byte[] copyBytes12 = Arrays.copyOfRange(dataBytes, 14, 16);
-            Integer realHeight = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes12),16);
+            Integer realHeight1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes12),16);
+            Double realHeight = realHeight1 * 0.1;
             log.info("realHeight: " + realHeight.toString());
 
             //高度百分比
             byte[] copyBytes13 = Arrays.copyOfRange(dataBytes, 16, 17);
-            Integer realHeightper = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes13),16);
+            Integer realHeightper1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes13),16);
+            Double realHeightper = realHeightper1 * 0.1;
             log.info("realHeightper: " + realHeightper.toString());
 
             //实时速度-速度
@@ -775,12 +793,14 @@ public class Elevator {
 
             //实时倾斜度
             byte[] copyBytes16 = Arrays.copyOfRange(dataBytes, 17, 19);
-            Integer realTilt = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes16),16);
+            Integer realTilt1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes16),16);
+            Double realTilt = realTilt1 * 0.01;
             log.info("realTilt: " + realTilt.toString());
 
             //倾斜百分比
             byte[] copyBytes17 = Arrays.copyOfRange(dataBytes, 19, 20);
-            Integer tiltPer = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes17),16);
+            Integer tiltPer1 = Integer.parseInt(DataTranslate.bytesToHexString(copyBytes17),16);
+            Double tiltPer = tiltPer1 * 0.01;
             log.info("tiltPer: " + tiltPer.toString());
 
             //驾驶员身份认证结果

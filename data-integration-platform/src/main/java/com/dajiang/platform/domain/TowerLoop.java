@@ -31,32 +31,32 @@ public class TowerLoop {
     @Column(name = "lifting_time", nullable = false, columnDefinition = "timestamp COMMENT '起吊时间'")
     private Timestamp liftingTime;
 
-    @Column(name = "lifting_hei", nullable = false, columnDefinition = "float(32) COMMENT '起吊点高度'")
-    private Float liftingHei;
+    @Column(name = "lifting_hei", nullable = false, columnDefinition = "float(32,1) COMMENT '起吊点高度'")
+    private Double liftingHei;
 
-    @Column(name = "lifting_range", nullable = false, columnDefinition = "float(32) COMMENT '起吊点幅度'")
-    private Float liftingRange;
+    @Column(name = "lifting_range", nullable = false, columnDefinition = "float(32,1) COMMENT '起吊点幅度'")
+    private Double liftingRange;
 
-    @Column(name = "lifting_turn", nullable = false, columnDefinition = "float(32) COMMENT '起吊点回转'")
-    private Float liftingTurn;
+    @Column(name = "lifting_turn", nullable = false, columnDefinition = "float(32,1) COMMENT '起吊点回转'")
+    private Double liftingTurn;
 
     @Column(name = "lifting_time2", nullable = false, columnDefinition = "timestamp COMMENT '起吊时间2'")
     private Timestamp liftingTime2;
 
-    @Column(name = "lifting_hei2", nullable = false, columnDefinition = "float(32) COMMENT '起吊点高度2'")
-    private Float liftingHei2;
+    @Column(name = "lifting_hei2", nullable = false, columnDefinition = "float(32,1) COMMENT '起吊点高度2'")
+    private Double liftingHei2;
 
-    @Column(name = "lifting_range2", nullable = false, columnDefinition = "float(32) COMMENT '起吊点幅度2'")
-    private Float liftingRange2;
+    @Column(name = "lifting_range2", nullable = false, columnDefinition = "float(32,1) COMMENT '起吊点幅度2'")
+    private Double liftingRange2;
 
-    @Column(name = "lifting_turn2", nullable = false, columnDefinition = "float(32) COMMENT '起吊点回转2'")
-    private Float liftingTurn2;
+    @Column(name = "lifting_turn2", nullable = false, columnDefinition = "float(32,1) COMMENT '起吊点回转2'")
+    private Double liftingTurn2;
 
-    @Column(name = "lifting_wei", nullable = false, columnDefinition = "float(32) COMMENT '最大吊重'")
-    private Float liftingWei;
+    @Column(name = "lifting_wei", nullable = false, columnDefinition = "float(32,1) COMMENT '最大吊重'")
+    private Double liftingWei;
 
-    @Column(name = "lifting_load", nullable = false, columnDefinition = "float(32) COMMENT '最大负荷'")
-    private Float liftingLoad;
+    @Column(name = "lifting_load", nullable = false, columnDefinition = "float(32,1) COMMENT '最大负荷'")
+    private Double liftingLoad;
 
     @Column(name = "violation_reg", nullable = false, columnDefinition = "int(32) COMMENT '是否违章'")
     private Integer violationReg;
